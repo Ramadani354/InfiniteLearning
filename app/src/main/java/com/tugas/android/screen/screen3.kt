@@ -15,6 +15,7 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -78,8 +79,12 @@ fun screen3(navController: NavHostController) {
                 Alignment.TopCenter){
                 Image(painter = painterResource(id = R.drawable.foto_profile),
                     contentDescription ="foto",
-                    modifier = Modifier.size(400.dp).padding(top = 80.dp, bottom = 16.dp))
+                    modifier = Modifier
+                        .size(400.dp)
+                        .padding(top = 80.dp, bottom = 16.dp))
             }
+            Divider()
+
             Text(text = "Nama : Yovi Adhi Ramadani",
                 fontSize = 18.sp)
 

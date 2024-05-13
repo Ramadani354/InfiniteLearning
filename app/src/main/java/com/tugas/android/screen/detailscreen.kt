@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
@@ -21,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -40,7 +42,7 @@ fun detail(photos:Array<Int>,
                 Box(modifier = Modifier.fillMaxWidth(),
                     contentAlignment = Alignment.Center
                 ) {
-                    Text(text = "detail")
+                    Text(text = "Detail")
 
                 }
             },
@@ -56,19 +58,22 @@ fun detail(photos:Array<Int>,
     ) {
         Column(modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
+            .padding(top = 100.dp),
             verticalArrangement = Arrangement.spacedBy(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(text = name[itemIndex!!],
+                fontSize = 40.sp,
+                textAlign = TextAlign.Center)
             Box(modifier = Modifier.fillMaxWidth()
                 , Alignment.TopCenter){
                 Image(painter = painterResource(id = photos[itemIndex!!]),
                     contentDescription =name[itemIndex],
                     modifier = Modifier.size(300.dp))
             }
-            Text(text = name[itemIndex!!],
-                fontSize = 40.sp)
+
+            Divider()
             Text(text = ingridients[itemIndex],
-                fontSize = 20.sp)
+                fontSize = 18.sp)
         }
     }
 
